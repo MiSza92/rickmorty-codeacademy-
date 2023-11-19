@@ -14,45 +14,27 @@ type ComponentProps = {
 
 const characterEndPoint = "https://rickandmortyapi.com/api/character/";
 
-const characterPaginationEndPoint = `https://rickandmortyapi.com/api/character/?page=1`;
-
-//! 1. Array erstellen 2.Mach eine Schleife 3. daten ins array 4. id inkrementieren 5.loop
-
 export const getServerSideProps: GetServerSideProps<ComponentProps> = async () => {
+  let chars = [] as CharacterType[];
+
   const response = await fetch(characterEndPoint);
 
   const fetchInfo = (await response.json()) as fetchData;
-  //   console.log("fetchInfo :>> ", fetchInfo.info);
-  const { results } = fetchInfo;
 
-  let preFinalData = { ...results };
-  console.log("preFinalData :>> ", preFinalData);
-  for (let i = 1; i <= fetchInfo.info?.pages; i++) {
+  for (let i = 0; i <= fetchInfo.info.pages; i++) {
     const loopFetch = await fetch(
       `https://rickandmortyapi.com/api/character/?page=${i}`
     );
-    const fetchInfo = (await loopFetch.json()) as fetchData;
-    const { results } = fetchInfo;
-
-    const results2 = results as CharacterType[];
-    // console.log("preFinalData :>> ", preFinalData);
-    let data: [];
-    for (let j = 0; j < results2?.length; j++) {
-      //  console.log(`results[${j}] :>> `, results2[j]);
+    const data = (await loopFetch.json()) as fetchData;
+    const data2 = data.results as CharacterType[];
+    for (let j = 0; j <= data2.length; j++) {
+      if (data2[j] != null) {
+        chars.push(data2[j] as CharacterType);
+      }
     }
-    //  console.log("preFinalData :>> ", preFinalData);
-    //console.log("processedInfo :>> ".bgRed, results);
-    // preFinalData = [...preFinalData, ...(results as CharacterType[])];
-    // const { results } = fetchInfo as CharacterType[];
-    //console.log("results :>> ", preFinalData);
-    // preFinalData += results;
   }
-  //   console.log("data2 :>> ", preFinalData);
-  // console.log("preFinalData :>> ", preFinalData);
-  const finalData = preFinalData;
-  //   console.log("finalData :>> ", finalData);
   return {
-    props: { characters: finalData },
+    props: { characters: chars },
   };
 };
 
