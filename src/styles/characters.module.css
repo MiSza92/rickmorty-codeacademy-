@@ -1,0 +1,38 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 6rem; */
+  min-height: 100vh;
+}
+.characterList {
+  border: red solid;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+
+  justify-content: center;
+}
+.characterCard {
+  border: grey solid;
+  border-radius: 40px;
+  padding-left: 0vw;
+  display: flex;
+  margin: 0.3vh 0.1vw;
+}
+.imgBoxOnCard {
+  height: 15vh;
+}
+
+.imgBoxOnCard img {
+  border-radius: 40px;
+  height: 100%;
+  padding: 0.3vh 0vw;
+}
+.textBoxOnCard ul {
+  padding: 0.5vh 1vw;
+}
+.textBoxOnCard li {
+  list-style: none;
+}
