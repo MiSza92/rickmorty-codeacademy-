@@ -1,5 +1,5 @@
 import React from "react";
-import "@/styles/episodesFullList.module.css";
+import styles from "@/styles/episodesFullList.module.css";
 import { useQuery } from "@apollo/client";
 import gql from "graphql-tag";
 import { CharacterType, episodeType } from "@/types/customTypes";
@@ -10,6 +10,10 @@ const GET_EPISODES_DATA = gql`
       info {
         count
       }
+      results {
+        name
+        image
+      }
     }
     episodes {
       info {
@@ -18,11 +22,6 @@ const GET_EPISODES_DATA = gql`
       results {
         id
         name
-        characters {
-          id
-          name
-          image
-        }
       }
     }
   }
@@ -35,6 +34,8 @@ function episodesFullList() {
   if (error) return <p>Error: {error.message}</p>;
 
   const episodes: episodeType[] = data.episodes.results;
+  const characters = data.characters.results;
+  console.log("data :>> ", data);
   console.log("episodes :>> ", episodes);
 
   // Überprüfe, ob episodes[0] definiert ist, bevor darauf zugegriffen wird
@@ -44,19 +45,46 @@ function episodesFullList() {
 
   // Erstelle eine Tabelle mit den Daten
   return (
-    <div>
-      {episodes.map((episode) => (
+    <div className={`${styles.tableContainer}`}>
+      <table className={`${styles.bigTable}`}>
+        <thead className={`${styles.tableHead}`}>
+          <tr>
+            <th id="leerCell"></th>
+            {episodes.map((episode) => (
+              <th key={episode.id}>
+                {episode.id} - {episode.name}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody className={`${styles.tableBody}`}>
+          {characters.map((character) => (
+            <tr key={character.name}>
+              <td colSpan={episodes.length + 1}>{character.name}</td>
+              {episodes.map((episode) => (
+                <td key={episode.id}></td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export default episodesFullList;
+{
+  /* {episodes.map((episode) => (
         <div key={episode.id}>
-          <h3>{episode.name}</h3>
+          <h3>
+            {episode.id}
+            {episode.name}
+          </h3>
           <ul>
             {episode.characters.map((character) => (
               <li key={character.id}>{character.name}</li>
             ))}
           </ul>
         </div>
-      ))}
-    </div>
-  );
+      ))} */
 }
-
-export default episodesFullList;
