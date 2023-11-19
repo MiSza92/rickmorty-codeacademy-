@@ -39,17 +39,12 @@ export const getServerSideProps: GetServerSideProps<ComponentProps> = async () =
 };
 
 function characters({ characters }: ComponentProps) {
-  console.log("character :>> ", characters[0]);
-  let arr1 = [1, 2, 3, 4];
-  let arr2 = [5, 6, 7, 8];
-  arr1 = [...arr1, ...arr2];
-
   return (
     <div>
       <ul className={`${styles.characterList}`}>
         {characters &&
-          characters.map((result) => {
-            const { id, name, image } = result;
+          characters.map((result: CharacterType) => {
+            const { id, name, image, origin } = result;
             return (
               <li className={`${styles.characterCard}`} key={id}>
                 <div className={`${styles.imgBoxOnCard}`}>
@@ -58,6 +53,7 @@ function characters({ characters }: ComponentProps) {
                 <div className={`${styles.textBoxOnCard}`}>
                   <ul>
                     <li> {name}</li>
+                    <li>{origin.name}</li>
                   </ul>
                 </div>
               </li>
