@@ -1,0 +1,66 @@
+.card {
+  border: yellow 3px solid;
+  height: 100%;
+  width: 100%;
+  border-radius: 40px;
+  background: var(--blau);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  animation: move 1s infinite;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  min-width: fit-content;
+}
+
+.card img {
+  height: 50%;
+  width: 100%;
+  object-fit: fill;
+  border-radius: var(--radius1);
+  border-bottom-right-radius: 0;
+  border: black solid;
+  outline: 0.5vh solid var(--grün);
+  background: var(--blau);
+}
+
+h1 {
+  font-size: 4vh;
+}
+p {
+  font-size: 2.3vh;
+}
+.charBox {
+  padding-top: 1vh;
+  height: 50%;
+  display: flex;
+  align-content: center;
+
+  flex-direction: column;
+}
+
+.charBox td {
+  border-bottom: var(--gelb) solid;
+}
+.charBox td:nth-child(even) {
+  text-align: end;
+}
+
+.charBox table {
+  height: 80%;
+
+  border-collapse: collapse;
+  margin: 0 1vw;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(0.3%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}

@@ -1,0 +1,155 @@
+.api {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  position: relative;
+  background: var(--backGround);
+  z-index: 2;
+  padding: 0 2vw;
+}
+.loadingText {
+  text-align: center;
+  width: 100%;
+  font-size: 8vh;
+}
+.optionsContainer {
+  width: 100%;
+  margin-top: 2vh;
+  height: 10%;
+  border-radius: 15px;
+  background: var(--orange);
+  border: black solid;
+  outline: 0.5vh solid var(--grün);
+}
+
+.filterBox {
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  padding-bottom: 0.2vh;
+}
+.filterBox div {
+  padding-top: 1vh;
+  display: flex;
+  white-space: nowrap;
+  font-size: 2.5vh;
+  color: var(--gelb);
+}
+.filterBox div input,
+select {
+  font-size: 2.2vh;
+  width: 100%;
+  height: 2.7vh;
+  margin-top: 0.3vh;
+  margin: 0.3vh 2vw;
+  padding-left: 0.2vw;
+  color: var(--gelb);
+  background: var(--blau);
+  border-radius: 10px;
+}
+.optionsContainer h1 {
+  font-size: 3.5vh;
+}
+.midContainer {
+  height: 85vh;
+  margin: 2vh 0;
+  display: flex;
+  justify-content: space-between;
+}
+.swipContainer {
+  height: 100%;
+  width: 60%;
+  background: var(--orange);
+  background: radial-gradient(at center, var(--gelb), var(--orange));
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  border: black solid;
+  outline: 0.5vh solid #b5de17;
+}
+.swiper {
+  height: 100%;
+  padding: 0 5vh;
+}
+
+.swiper-slide-prev {
+  padding-left: 4.5vw;
+}
+.swiper-slide-next {
+  padding-right: 4.5vw;
+}
+.swiper-scrollbar {
+  height: 1vh !important;
+}
+.swiper-button-next {
+  --swiper-navigation-sides-offset: 30px;
+  --swiper-navigation-color: var(--gelb);
+}
+.swiper-button-prev {
+  --swiper-navigation-sides-offset: 30px;
+  --swiper-navigation-color: var(--gelb);
+}
+.swiper-pagination-fraction {
+  color: var(--blau) !important;
+  text-align: left !important;
+  padding: 1vh 0.5vw;
+}
+.swiper-slide-active {
+  padding: 1vh 0 !important;
+}
+.swiper-slide-shadow-right {
+  border-radius: var(--radius1) !important;
+  margin-right: 4.5vw !important;
+  width: 75% !important;
+}
+.swiper-slide-shadow-left {
+  border-radius: var(--radius1) !important;
+  margin-left: 4.5vw !important;
+  width: 75% !important;
+}
+.bla {
+  overflow: hidden;
+}
+.singleSlide {
+  height: 80vh;
+  width: max-content;
+
+  margin: 2vh 2vw;
+}
+.episodesContainer {
+  width: 100%;
+  height: 100%;
+  margin-left: 1vw;
+  border-radius: 15px;
+  background: var(--orange);
+  border: black solid;
+  outline: 0.5vh solid var(--grün);
+  overflow: hidden;
+}
+.boxContainer {
+  height: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  overflow: scroll;
+}
+.epiText {
+  padding-top: 2vh;
+  padding-left: 0.5vw;
+}
+
+.epiText h2 {
+  font-size: 3.5rem;
+}
+.epiBox {
+  width: 7rem;
+  height: 4.5rem;
+  margin: 1vh 0.2vw;
+}
+.epiBox:last-child {
+  justify-content: start;
+}

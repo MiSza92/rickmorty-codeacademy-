@@ -1,0 +1,97 @@
+.mobileApi {
+  height: 100vh;
+  width: 100%;
+  background: var(--backGround);
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.titleBox {
+  margin-top: 2vh;
+  font-color: black !important;
+  border: red solid;
+  padding: 0.5vh 0.5vw;
+  border-radius: 25px;
+  border: black solid;
+  outline: 0.5vh solid #b5de17;
+  background: var(--orange);
+}
+
+.drawer {
+  border-radius: 25px;
+}
+
+.mobileFilterBox {
+  background: var(--orange);
+  color: var(--grün);
+  height: 100%;
+  padding: 0.5vh 0.5vw;
+  border-top-radius: 25px;
+  border: black solid;
+  outline: 0.5vh solid #b5de17;
+}
+.mobileFilterBox div {
+  padding-top: 1vh;
+  display: flex;
+  white-space: nowrap;
+  font-size: 2.5vh;
+  color: var(--grün);
+}
+.mobileFilterBox div input,
+select {
+  font-size: 2.2vh;
+  width: 100%;
+  height: 2.7vh;
+  margin-top: 0.3vh;
+  margin: 0.3vh 2vw;
+  padding-left: 0.2vw;
+  color: var(--grün);
+  background: var(--blau);
+  border-radius: 10px;
+}
+.swipMobileContainer {
+  height: 80%;
+  width: 85%;
+
+  background: var(--grün);
+  background: radial-gradient(at center, var(--grün), #ff8c00);
+
+  padding: 1vh 1vw;
+
+  display: flex;
+  align-items: center;
+
+  border-radius: 15px;
+  border: black solid;
+  outline: 0.5vh solid #b5de17;
+}
+.swiper {
+  height: 100%;
+  padding: 1vh 0vw;
+}
+.swiper-slide-prev {
+  padding-left: 4.5vw;
+}
+.swiper-slide-next {
+  padding-right: 4.5vw;
+}
+.filterBtn {
+  padding: 0.5vh 0.5vw;
+  border-radius: 25px;
+
+  align-self: center;
+  width: 30%;
+
+  background: var(--orange);
+  color: #b5de17;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+
+  outline: #27162c;
+  box-shadow: black 0px 5px 5px;
+  cursor: pointer;
+  border-color: #ffa200;
+}

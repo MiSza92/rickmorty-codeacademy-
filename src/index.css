@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap");
+* {
+  font-family: "Protest Riot", cursive;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+#root {
+  height: 100vh;
+
+  background: #050921;
+  --braun: #27162c;
+  --grün: #b5de17;
+  --gelb: #d6df18;
+  --blau: #0bb2c8;
+  --orange: #ff8c00;
+  --backGround: #050921;
+  --radius1: 2.5rem;
+  --radius2: 0.5rem;
+}
+
+p,
+label {
+  color: var(--grün);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+h1 {
+  text-align: center;
+  color: var(--grün);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}

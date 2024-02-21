@@ -1,0 +1,24 @@
+.box {
+  border: black solid;
+  height: 100%;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius2);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: 0.2vh solid var(--grün);
+  outline: black solid 0.1px;
+  opacity: 0.5;
+  transition: background-color, ease 1s;
+}
+.box p {
+  text-align: center;
+}
+.active {
+  background: var(--blau);
+  transition: background-color, opacity ease 1s;
+  transition: opacity ease-out 1s;
+  opacity: 1;
+}
